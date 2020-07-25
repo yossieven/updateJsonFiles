@@ -22,10 +22,11 @@
         </form>
         <form action="/", method="post">
             <div class="form-group">
-                <label for="content">JSON file content:</label>
-                <textarea id="content" name="content" class="form-control" rows=25>{% for line in text %} {{ line }}&#10 {% endfor %} </textarea>
+{#                <label for="content">JSON file content:</label>#}
+                <small id="comment" class="form-text text-muted">Edit loaded json and submit to update file</small>
+                <textarea id="content" name="content" class="form-control" rows=20>{% for line in text %} {{ line }}&#10 {% endfor %} </textarea>
                 <input type="hidden" id="hidden-file" name="hidden-file" value="{{ filename }}">
-                <input type="submit" class="btn btn-primary" value="Submit">
+                <input type="submit" class="btn btn-primary mt-2" value="Submit">
             </div>
 
         </form>
