@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block head %} {% endblock %}
+{% block title %} {% endblock %}
+{% block style %} {% endblock %}
+
+{% block body %}
+    <div class="container">
+
+        <form action="/", method="get">
+            <div class="form-group">
+                <label for="filename">JSON File Path:</label>
+                <div class="form-inline">
+                    <input type="text" class="form-control col-11" id="filename" name="filename" placeholder="full path of file to edit">
+                    <input type="submit" class="btn btn-success col-1" value="Load">
+                </div>
+            </div>
+        </form>
+        <form action="/", method="post">
+            <div class="form-group">
+                <label for="content">JSON file content:</label>
+                <textarea id="content" name="content" class="form-control" rows=25>{% for line in text %} {{ line }}&#10 {% endfor %} </textarea>
+                <input type="hidden" id="hidden-file" name="hidden-file" value="{{ filename }}">
+                <input type="submit" class="btn btn-primary" value="Submit">
+            </div>
+
+        </form>
+
+    </div>
+ {% endblock %}
